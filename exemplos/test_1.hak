@@ -1,0 +1,10 @@
+$nome    =   "Anderosn Barberini";
+
+$soma = 10 + 5;
+$sub = 4 - 2;
+$m = $soma * $sub;
+
+println $m;
+
+$a = $m < 50;
+println $a;
