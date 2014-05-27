@@ -1,0 +1,11 @@
+print "Digite nota NP1: ";
+scan $np1;
+
+print "Digite nota NP2: ";
+scan $np2;
+
+$soma = $np1 + $np2;
+$media = $soma / 2;
+
+print "A media eh: ";
+println $media; 

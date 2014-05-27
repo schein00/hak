@@ -16,10 +16,14 @@ public class ScanToken {
 		Scanner s = new Scanner(System.in);
 		String value = s.nextLine();
 
-		Variable var = new Variable();
-		var.setName(matcher.group(1));
-		var.setValue(value);
-		var.setType(VariableTypes.STRING);
+		Variable var = VariableToken.parseVariable(matcher.group(1), value);
+	
+		if(var == null) {
+			var = new Variable();
+			var.setName(matcher.group(1));
+			var.setType(VariableTypes.STRING);
+			var.setValue(value);
+		}
 		
 		Variables.getInstance().add(var);
 	}
