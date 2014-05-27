@@ -1,0 +1,5 @@
+print     "Digite seu nome: ";
+scan $nome;
+
+print "Bem vindo, ";
+println $nome;

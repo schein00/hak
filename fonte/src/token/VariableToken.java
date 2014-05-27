@@ -18,15 +18,7 @@ public class VariableToken {
 		Variable var = VariableToken.parseVariable(name, value);
 
 		if (var != null) {
-
 			Variables.getInstance().add(var);
-
-			/*
-			System.out.print(value);
-			System.out.print(" " + var.getType() + " ---- " + var.getValue());
-
-			System.out.println("");
-			*/
 		}
 
 	}
@@ -40,11 +32,12 @@ public class VariableToken {
 		/*
 		 * Valor da variável é outra variável
 		 */
-
-		mValue = Pattern.compile("^[$]([a-zA-Z_0-9]\\w*)[\\s]{0,}$").matcher(value);
+		mValue = Pattern.compile("^[\\s]{0,}[$]([a-zA-Z_0-9]\\w*)[\\s]{0,}$").matcher(value);
 		if (mValue.find()) {
-			var = Variables.getInstance().find(mValue.group(1));
-			if (var != null) {
+			Variable aux = Variables.getInstance().find(mValue.group(1));
+			if (aux != null) {
+				var.setType(aux.getType());
+				var.setValue(aux.getValue());
 				return var;
 			} else {
 				HakException.VariableNotFound(mValue.group(1));
@@ -55,7 +48,7 @@ public class VariableToken {
 		 * Variável tipo string
 		 */
 
-		mValue = Pattern.compile("\"(.*)\"").matcher(value);
+		mValue = Pattern.compile("^[\\s]{0,}\"(.*)\"[\\s]{0,}$").matcher(value);
 		if (mValue.find()) {
 			var.setType(VariableTypes.STRING);
 			var.setValue(mValue.group(1));
@@ -83,13 +76,23 @@ public class VariableToken {
 			var.setValue(mValue.group(1));
 			return var;
 		}
+		
+		/*
+		 * Booleano
+		 */
+		 
+		mValue = Pattern.compile("^[\\s]{0,}(true|false)[\\s]{0,}$").matcher(value);
+		if (mValue.find()) {
+			var.setType(VariableTypes.STRING);
+			var.setValue(mValue.group(1));
+			return var;
+		}
 
 		/*
 		 * Expressão lógicas e matemáticas (a [ + - * / % < > <= >= != ==] b)
 		 */
 
 		mValue = Pattern.compile("(.*)[\\s]{0,}(\\+|\\-|\\*|\\/|%|>=|<=|>|<|!=|==)[\\s]{0,}(.*)").matcher(value);
-
 		if (mValue.find()) {
 			String a, op, b;
 			a = mValue.group(1);

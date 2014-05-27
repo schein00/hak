@@ -1,0 +1,22 @@
+$nome    =   "Anderosn Barberini";
+
+$np1 = 8.5 + 4.5;
+$np2 = 4.3 + 10;
+
+$np1 = $np1 / 2;
+$np2 = $np2 / 2;
+
+$media = $np1 + $np2;
+$media = $media / 2;
+
+
+print "Media: "
+println $media;
+
+print $nome;
+
+if($media > 6) {
+	print " , voce esta aprovado.";
+} else {
+	print " , voce esta reprovado.";
+}

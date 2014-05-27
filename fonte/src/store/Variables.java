@@ -28,11 +28,9 @@ public class Variables {
 	{
 		Variable test = this.find(var.getName());
 		if(test != null) {
-			
 			// Variável já foi criada, somente altera valor
 			test.setValue(var.getValue());
 		} else {
-			
 			// Cria a variável
 			this.variables.add(var);
 		}

@@ -24,7 +24,11 @@ public class MathToken {
 
 			switch (op) {
 				case "+":
-					if(type == VariableTypes.DOUBLE) {
+					if(auxA.getType() == VariableTypes.STRING && auxB.getType() == VariableTypes.STRING) {
+						// Concatenando duas strings
+						var.setValue(auxA.getValue() + auxB.getValue());
+						type = VariableTypes.STRING;
+					} else if(type == VariableTypes.DOUBLE) {
 						var.setValue(String.valueOf(auxA.getDoubleValue() + auxB.getDoubleValue()));
 					} else {
 						var.setValue(String.valueOf(auxA.getIntValue() + auxB.getIntValue()));
@@ -79,6 +83,13 @@ public class MathToken {
 					break;
 				case ">=":
 					var.setValue((auxA.getDoubleValue() >= auxB.getDoubleValue()) ? "true" : "false");
+					break;
+				case "==":
+					if(auxA.getType() == VariableTypes.STRING && auxB.getType() == VariableTypes.STRING) {
+						var.setValue((auxA.getValue().equals(auxB.getValue())) ? "true" : "false");
+					} else {
+						var.setValue((auxA.getDoubleValue() == auxB.getDoubleValue()) ? "true" : "false");
+					}
 					break;
 				case "!-":
 					var.setValue((auxA.getDoubleValue() != auxB.getDoubleValue()) ? "true" : "false");

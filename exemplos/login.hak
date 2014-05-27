@@ -1,0 +1,15 @@
+print "Login: ";
+scan $login;
+
+print "Senha: ";
+scan $senha;
+
+if($login == "uffs") {
+	if($senha == "prog") {
+		println "Seja bem vindo!";
+	} else {
+		println "Senha incorreta!";
+	}
+} else {
+	println "Login nao encontrado!";
+}

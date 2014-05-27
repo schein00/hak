@@ -1,0 +1,61 @@
+$a = 10 % 2;
+
+if($a == 0) {
+	println "resto zero";
+}
+
+println "Soma";
+println 1 + 4;
+
+$c1 = "parte 1";
+$c2 = " parte 2";
+
+print "concatenando: ";
+println $c1 + $c2;
+
+println "Ola mundo";
+
+$a = 2;
+println $a;
+
+$i = 0;
+while($i < 10) {
+	println          $i;
+	$i = $i + 1;
+}
+
+$a =      1    + 1;
+$b = 3 + $a;  
+
+println           $a;
+println $b;
+
+$a = 1;
+
+if($a > 1) {
+	println "Maior";
+} else {
+	println "Menor";
+}
+
+
+$i = 0;
+$j = $i;
+
+while($i < 3) {
+	if($i == 0) {
+		println           "Zero";
+	} else {
+		println "Outro";
+	}
+	$i = $i + 1;
+}
+
+
+if($i ==          3) {
+	if($j == 0) {
+		println "Ok";
+	} else {
+		println "Erro";
+	}
+}
