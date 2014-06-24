@@ -2,7 +2,7 @@
 /**
  * Interpretador Hak
  *
- * Lê o arquivo a ser interpretado e guarda em um
+ * Le o arquivo a ser interpretado e guarda em um
  * ArrayList.
  * 
  * Por Anderson Barberini <anderson.aeb@gmail.com>
@@ -44,7 +44,7 @@ public class HakFile {
 	}
 
 	/**
-	 * @return {@link ArrayList} Linhas de código do arquivo
+	 * @return {@link ArrayList} Linhas de codigo do arquivo
 	 */
 	public ArrayList<String> getLines() {
 		return this.lines;
