@@ -1,7 +1,7 @@
 /**
  * Interpretador Hak
  *
- * Inicia um novo HakFile contendo um arquivo específico
+ * Inicia um novo HakFile contendo um arquivo especifico
  * para se interpretador pelo programa.
  * 
  * Para executar, rode o seguinte comando no terminal:
