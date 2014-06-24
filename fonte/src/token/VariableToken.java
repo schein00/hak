@@ -30,7 +30,7 @@ public class VariableToken {
 		Matcher mValue;
 
 		/*
-		 * Valor da variável é outra variável
+		 * Valor da variavel e outra variavel
 		 */
 		mValue = Pattern.compile("^[\\s]{0,}[$]([a-zA-Z_0-9]\\w*)[\\s]{0,}$").matcher(value);
 		if (mValue.find()) {
@@ -45,7 +45,7 @@ public class VariableToken {
 		}
 
 		/*
-		 * Variável tipo string
+		 * Variavel tipo string
 		 */
 
 		mValue = Pattern.compile("^[\\s]{0,}\"(.*)\"[\\s]{0,}$").matcher(value);
@@ -56,7 +56,7 @@ public class VariableToken {
 		}
 
 		/*
-		 * Variável tipo int
+		 * Variavel tipo int
 		 */
 
 		mValue = Pattern.compile("[\\s]{0,}(^(\\+|\\-)?[\\s]{0,}([0-9]*))[\\s]{0,}$").matcher(value);
@@ -67,7 +67,7 @@ public class VariableToken {
 		}
 
 		/*
-		 * Variável tipo double
+		 * Variavel tipo double
 		 */
 
 		mValue = Pattern.compile("[\\s]{0,}(^(\\+|\\-)?[\\s]{0,}([0-9]*)(\\.[0-9]*))[\\s]{0,}$").matcher(value);
@@ -89,7 +89,7 @@ public class VariableToken {
 		}
 
 		/*
-		 * Expressão lógicas e matemáticas (a [ + - * / % < > <= >= != ==] b)
+		 * Expressao logicas e matematicas (a [ + - * / % < > <= >= != ==] b)
 		 */
 
 		mValue = Pattern.compile("(.*)[\\s]{0,}(\\+|\\-|\\*|\\/|%|>=|<=|>|<|!=|==)[\\s]{0,}(.*)").matcher(value);
