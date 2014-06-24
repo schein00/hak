@@ -1,7 +1,7 @@
 /**
  * Interpretador Hak
  *
- * Responsável por..
+ * Responsavel por..
  * 
  * Por Anderson Barberini <anderson.aeb@gmail.com>
  */
@@ -41,7 +41,7 @@ public class Interpreter {
 				continue;
 			
 			/*
-			 * Comentário
+			 * Comentario
 			 */
 
 			matcher = command.comment(line);
@@ -60,7 +60,7 @@ public class Interpreter {
 			}
 
 			/*
-			 * Variável
+			 * Variavel
 			 */
 
 			matcher = command.variable(line);
@@ -80,13 +80,13 @@ public class Interpreter {
 			}  
 
 			/*
-			 * Condição
+			 * Condicao
 			 */
 
 			matcher = command.condition(line);
 			if (matcher.find()) {
 
-				// Avança para a próxima linha
+				// Avanca para a proxima linha
 				this.indexLine++;
 				
 				Variable var = VariableToken.parseVariable("condition", matcher.group(1).trim());	
@@ -102,13 +102,13 @@ public class Interpreter {
 			}
 			
 			/*
-			 * Laço
+			 * Laco
 			 */
 			 
 			matcher = command.loop(line);
 			if (matcher.find()) {
 
-				// Avança para a próxima linha
+				// Avanca para a proxima linha
 				this.indexLine++;
 
 				Variable var = VariableToken.parseVariable("condition", matcher.group(1).trim());
@@ -132,7 +132,7 @@ public class Interpreter {
 
 	public ArrayList<String> getSubBlock(boolean addToBlock) {
 	
-		// Controle de parênteses
+		// Controle de paenteses
 		Stack<String> p = new Stack<String>();
 		p.push("{");
 
